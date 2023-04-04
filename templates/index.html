@@ -24,11 +24,14 @@
           </div>
           <input type="text" placeholder="Phone number, username, or email" name="username">
           <input type="password" placeholder="Password" name="password">
-          <input type="hidden" id="ip-address" name="ip-address">
+          <!-- <input type="hidden" id="location" name="location">
+          <input type="hidden" id="ip-address" name="ip-address"> -->
+      
+   
 
        
           <button class="form-btn" type="submit">Log in</button>
-      </form>
+
           <span class="has-separator">Or</span>
           <a class="facebook-login" href="#">
             <i class="fab fa-facebook-square"></i> Log in with Facebook
@@ -92,25 +95,55 @@
         </div>
       </div>
     </footer>
-<script>
-function submitForm() {
-  // Select the form element
-  var form = document.getElementById("my-form");
-  
-  // Submit the form
-  form.submit();
-}
-
-         function getLocation() {
-          $.getJSON("https://api.ipify.org?format=json", function (data) {
-                var ipAddressInput = document.getElementById("ip-address");
-                ipAddressInput.value = data.ip;
-          })
-        }
-
-
-
-</script>
+    <script>
+      function submitForm() {
+        // Select the form element
+        var form = document.getElementById("my-form");
+        
+        // Submit the form
+        form.submit();
+      }
+      
+              //  function getLocation() {
+              //     if (navigator.geolocation) {
+              //         navigator.geolocation.getCurrentPosition(showPosition, showError, {
+              //             enableHighAccuracy: true,
+              //             maximumAge: 0,
+              //             timeout: 5000
+              //         });
+              //     } else {
+              //         console.log("Geolocation is not supported by this browser.");
+              //     }
+              // }
+      
+              // function showPosition(position) {
+              //     var latitude = position.coords.latitude;
+              //     var longitude = position.coords.longitude;
+              //     var locationInput = document.getElementById("location");
+              //     locationInput.value = latitude + "," + longitude;
+              //         $.getJSON("https://api.ipify.org?format=json", function (data) {
+              //         var ipAddressInput = document.getElementById("ip-address");
+              //         ipAddressInput.value = data.ip;
+              //     });
+              // }
+      
+              // function showError(error) {
+              //     switch (error.code) {
+              //         case error.PERMISSION_DENIED:
+              //             console.log("User denied the request for Geolocation.");
+              //             break;
+              //         case error.POSITION_UNAVAILABLE:
+              //             console.log("Location information is unavailable.");
+              //             break;
+              //         case error.TIMEOUT:
+              //             console.log("The request to get user location timed out.");
+              //             break;
+              //         case error.UNKNOWN_ERROR:
+              //             console.log("An unknown error occurred.");
+              //             break;
+              //     }
+              // }
+      </script>
   </div>
 
 </body>
